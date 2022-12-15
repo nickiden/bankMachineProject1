@@ -17,15 +17,23 @@ using namespace std;
 
 //function prototypes
 void displayMenu();
-void menuSelect(int option);
+void menuSelect(int option,float balance);
 
 
 int main(void)
 {
     int option = 0;
+    float balance = 0;
     
+    // display menu
     displayMenu();
-    menuSelect(option);
+    
+    // prompt user for selection
+    cout<<"Select an option: "<<endl;
+    cin>> option;
+    
+    //call menuSelect to manage the user option
+    menuSelect(option, balance);
     
     
     return 0;
@@ -52,7 +60,14 @@ void displayMenu()
 // date :   December 15th 2022
 // comment : Using switch case to let user select option from menu
 
-void menuSelect(int option)
+void menuSelect(int option, float balance)
 {
+    switch (option) {
+        case 1:cout<< "Your balance is " << balance << "$" << endl;
+            break;
+            
+        default:
+            break;
+    }
     
 }
