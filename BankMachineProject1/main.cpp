@@ -13,9 +13,11 @@
 
 
 #include <iostream>
+using namespace std;
 
 int main(void)
 {
+   
     
     return 0;
 }
@@ -28,6 +30,11 @@ int main(void)
 
 void displayMenu()
 {
-    
-    
+    cout<<"**********"<<endl;
+    cout<<"Thank you for using Banko Please select a banking option: "<<endl;
+    cout<<"1. Check Balance"<<endl;
+    cout<<"2. Deposit into account"<<endl;
+    cout<<"3. Withdraw from account"<<endl;
+    cout<<"**********"<<endl;
+
 }
