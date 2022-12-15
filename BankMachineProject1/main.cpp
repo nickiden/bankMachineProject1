@@ -34,8 +34,17 @@ int main(void)
         cout<<"Select an option: "<<endl;
         cin>> option;
         
-        //call menuSelect to manage the user option
-        menuSelect(option, balance);
+        // check user input valid
+        if (option >= 1 && option <= 4)
+        {
+            //call menuSelect to manage the user option
+            menuSelect(option, balance);
+        }
+        else
+        {
+            cout<< "please enter a valid menu number"<<endl;
+        }
+        
         
     } while(option != 4);
     return 0;
