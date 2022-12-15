@@ -17,7 +17,7 @@ using namespace std;
 
 //function prototypes
 void displayMenu();
-void menuSelect(int option,float balance);
+void menuSelect(int option,float& balance);
 
 
 int main(void)
@@ -25,19 +25,24 @@ int main(void)
     int option = 0;
     float balance = 0;
     
-    // display menu
-    displayMenu();
-    
-    // prompt user for selection
-    cout<<"Select an option: "<<endl;
-    cin>> option;
-    
-    //call menuSelect to manage the user option
-    menuSelect(option, balance);
-    
-    
+    do
+    {
+        // display menu
+        displayMenu();
+        
+        // prompt user for selection
+        cout<<"Select an option: "<<endl;
+        cin>> option;
+        
+        //call menuSelect to manage the user option
+        menuSelect(option, balance);
+        
+    } while(option != 4);
     return 0;
 }
+
+
+
 
 
 // Function : displayMenu
@@ -52,6 +57,7 @@ void displayMenu()
     cout<<"1. Check Balance"<<endl;
     cout<<"2. Deposit into account"<<endl;
     cout<<"3. Withdraw from account"<<endl;
+    cout<<"4. Exit"<<endl;
     cout<<"**********"<<endl;
 
 }
@@ -60,10 +66,32 @@ void displayMenu()
 // date :   December 15th 2022
 // comment : Using switch case to let user select option from menu
 
-void menuSelect(int option, float balance)
+void menuSelect(int option, float& balance)
 {
+    float depositAmount = 0.00;
+    float newSumDeposit = 0.00;
+    float withdraw = 0.00;
+    
     switch (option) {
         case 1:cout<< "Your balance is " << balance << "$" << endl;
+            break;
+        case 2:cout<< "Deposit amount: "<< endl;
+            cin >> depositAmount;
+            newSumDeposit = depositAmount + balance;
+            balance = newSumDeposit;
+            break;
+        case 3:cout<< "Withdraw amount: "<< endl;
+            
+            cin >> withdraw;
+            
+            if (withdraw <= balance)
+            {
+                balance -= withdraw;
+            }
+            else
+            {
+                cout<< "Sorry, not enough funds. Please deposit more money "<< endl;
+            }
             break;
             
         default:
