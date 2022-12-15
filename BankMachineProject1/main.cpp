@@ -15,9 +15,18 @@
 #include <iostream>
 using namespace std;
 
+//function prototypes
+void displayMenu();
+void menuSelect(int option);
+
+
 int main(void)
 {
-   
+    int option = 0;
+    
+    displayMenu();
+    menuSelect(option);
+    
     
     return 0;
 }
@@ -37,4 +46,13 @@ void displayMenu()
     cout<<"3. Withdraw from account"<<endl;
     cout<<"**********"<<endl;
 
+}
+
+// Function : menuSelect
+// date :   December 15th 2022
+// comment : Using switch case to let user select option from menu
+
+void menuSelect(int option)
+{
+    
 }
